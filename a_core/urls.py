@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
 from a_home.views import *
 
 urlpatterns = [
@@ -23,3 +25,5 @@ urlpatterns = [
     path('', home_view, name='home'),  # Home page URL    
     path('profile/', include('a_users.urls')),  # Profile page URL
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files in development

@@ -15,7 +15,12 @@
     <div class="text-gray-400 mb-2 -mt-3">@{{ user.username }}</div>
   </div>
 </div>
-<form method="POST" enctype="multipart/form-data">
+
+<form
+  method="POST"
+  enctype="multipart/form-data"
+  class="max-w-xl w-full mx-auto p-4"
+>
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Submit</button>
   {% if onboarding %}
