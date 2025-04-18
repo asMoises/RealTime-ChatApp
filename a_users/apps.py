@@ -7,5 +7,3 @@ class AUsersConfig(AppConfig):
     
     def ready(self):
         import a_users.signals
-        # Aqui eu importo o arquivo signals.py, que contém os sinais do Django.
-        # Isso é necessário para que os sinais sejam registrados e funcionem corretamente. 
